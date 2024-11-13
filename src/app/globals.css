@@ -102,7 +102,66 @@
   background-color: #fdf2fb !important;
 }
 
-.rbc-event-label{
+.rbc-event-label {
   color: gray !important;
   margin-bottom: 5px;
+}
+
+/* Question mark Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.question-mark {
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid gray;
+  color: gray;
+  padding: 2.5px 5px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+}
+
+.question-mark:hover {
+  /* background-color: #c3ebfa; */
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  color: white;
+  border: 1px solid white;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the question mark */
+  left: 50%;
+  margin-left: -80px; /* Center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
